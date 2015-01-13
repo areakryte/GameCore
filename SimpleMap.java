@@ -1,22 +1,16 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class SimpleMap extends AbstractMap{
 
+	Random randomCoordinateSeed = new Random();
+	int horizontalMapLength = randomCoordinateSeed.nextInt(30 - 25) + 25;
+	int cellLength = randomCoordinateSeed.nextInt(30 - 25) + 25;
+	
 	SimpleMap()
 	{
-		Random rand = new Random();
-		int horizontalMapLength = rand.nextInt(30 - 25) + 25;
-		int cellLength = rand.nextInt(30 - 25) + 25;
 		horizontalPopulate(horizontalMapLength, cellLength);
-	}
-	
-	SimpleMap(int horizontalMapLength){
-		horizontalPopulate(horizontalMapLength, 0);
-	}
-	
-	SimpleMap(int horizonthorizontalMapLengthalMap, int cellLength){
-		horizontalPopulate(horizonthorizontalMapLengthalMap, cellLength);
 	}
 	
 	public void print()
@@ -36,13 +30,22 @@ public class SimpleMap extends AbstractMap{
 	
 	private void horizontalPopulate(int horizontalMap, int cellLength){
 		for(int i = 0; i < horizontalMap; i++){
-			ArrayList<SimpleCell> arr = new ArrayList();
+			ArrayList<SimpleCell> arr = new ArrayList<SimpleCell>();
 			for(int j = 0; j < cellLength; j++){
 				SimpleCell cell = new SimpleCell();
 				arr.add(cell);
 			}
 			verticleMap.add(arr);
 		}
+	}
+	
+	private void setMap(){
+		Random rand = new Random();
+		List coords = new ArrayList();
+		int x;
+		int y;
+		
+		
 	}
 	
 	private void renderMap(){
