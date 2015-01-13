@@ -1,8 +1,9 @@
 import java.util.ArrayList;
+import java.util.List;
 
 abstract class AbstractMap {
 
-	public ArrayList<ArrayList<SimpleCell>> verticleMap = new ArrayList();
+	public List<ArrayList<SimpleCell>> verticleMap = new ArrayList();
 	
 	AbstractMap(){
 		
