@@ -21,6 +21,7 @@ public class SimpleMap extends AbstractMap{
 	
 	public void print()
 	{
+		renderMap();
 		for(int i = 0; i < verticleMap.size(); i++)
 		{
 			for(SimpleCell cell: verticleMap.get(i)){
@@ -42,6 +43,11 @@ public class SimpleMap extends AbstractMap{
 			}
 			verticleMap.add(arr);
 		}
+	}
+	
+	private void renderMap(){
+		verticleMap.get(0).get(0).terrain = CellState.Impassible;
+		verticleMap.get(0).get(0).terrain = CellState.Impassible;
 	}
 	
 }
