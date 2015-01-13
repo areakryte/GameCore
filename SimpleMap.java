@@ -1,9 +1,14 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 public class SimpleMap extends AbstractMap{
 
-	SimpleMap(){
-		
+	SimpleMap()
+	{
+		Random rand = new Random();
+		int horizontalMapLength = rand.nextInt(30 - 25) + 25;
+		int cellLength = rand.nextInt(30 - 25) + 25;
+		horizontalPopulate(horizontalMapLength, cellLength);
 	}
 	
 	SimpleMap(int horizontalMapLength){
@@ -38,4 +43,5 @@ public class SimpleMap extends AbstractMap{
 			verticleMap.add(arr);
 		}
 	}
+	
 }
