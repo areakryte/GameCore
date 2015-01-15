@@ -23,6 +23,8 @@ public class SimpleMap extends AbstractMap{
 					System.out.print("[ ]");
 				else if(cell.terrain.equals(CellState.Impassible))
 					System.out.print("[X]");
+				else if(cell.terrain.equals(CellState.Player))
+					System.out.print("[O]");
 			}
 			System.out.println();
 		}
@@ -59,6 +61,8 @@ public class SimpleMap extends AbstractMap{
 			xCoordinates.remove(0);
 			yCoordinates.remove(0);
 		}
+		
+		verticleMap.get(horizontalMapLength/2).get(cellLength/2).terrain = CellState.Player;
 	}
 	
 }

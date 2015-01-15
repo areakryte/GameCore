@@ -1,4 +1,4 @@
 
-public class AbstractPlayer {
+abstract class AbstractPlayer {
 
 }
