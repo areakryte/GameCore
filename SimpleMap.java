@@ -15,7 +15,7 @@ public class SimpleMap extends AbstractMap{
 	
 	public void print()
 	{
-		renderMap();
+		setMap();
 		for(int i = 0; i < verticleMap.size(); i++)
 		{
 			for(SimpleCell cell: verticleMap.get(i)){
@@ -41,16 +41,24 @@ public class SimpleMap extends AbstractMap{
 	
 	private void setMap(){
 		Random rand = new Random();
-		List coords = new ArrayList();
-		int x;
-		int y;
+		ArrayList<Integer> xCoordinates = new ArrayList<Integer>();
+		ArrayList<Integer> yCoordinates = new ArrayList<Integer>();
+		int randomBlock = (horizontalMapLength * cellLength) / 3;
 		
+		for(int i = 0; i < randomBlock; i++){
+			int x = rand.nextInt(horizontalMapLength);
+			int y = rand.nextInt(cellLength);
+			xCoordinates.add(x);
+			yCoordinates.add(y);
+		}
 		
-	}
-	
-	private void renderMap(){
-		verticleMap.get(0).get(0).terrain = CellState.Impassible;
-		verticleMap.get(0).get(0).terrain = CellState.Impassible;
+		for(int i = 0; i < randomBlock; i++){
+			int x = xCoordinates.get(0);
+			int y = yCoordinates.get(0);
+			verticleMap.get(x).get(y).terrain = CellState.Impassible;
+			xCoordinates.remove(0);
+			yCoordinates.remove(0);
+		}
 	}
 	
 }
